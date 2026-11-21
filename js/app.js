@@ -220,10 +220,17 @@ const app = {
         btnConfirmLogout.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i><span>Keluar...</span>';
         if (window.lucide) window.lucide.createIcons();
         setTimeout(() => {
+          // Tutup modal logout
           modalLogout.classList.add('hidden');
+          // Reset aplikasi: hapus data user dari state & local storage bila ada
+          if (app && app.state) {
+            app.state.initialData = null;
+          }
+          localStorage.removeItem('USER_SESSION'); // contoh, sesuaikan nama kunci sebenarnya
           alert('Anda telah berhasil keluar dari akun.');
+          // Arahkan ke beranda
           window.location.hash = '#/home';
-          // Trigger routing without full page reload
+          // Panggil routing manual agar hash diproses
           if (typeof app !== 'undefined' && app.handleRouting) {
             app.handleRouting();
           }
