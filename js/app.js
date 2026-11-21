@@ -223,7 +223,10 @@ const app = {
           modalLogout.classList.add('hidden');
           alert('Anda telah berhasil keluar dari akun.');
           window.location.hash = '#/home';
-          window.location.reload();
+          // Trigger routing without full page reload
+          if (typeof app !== 'undefined' && app.handleRouting) {
+            app.handleRouting();
+          }
         }, 600);
       };
     }
