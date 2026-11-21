@@ -1,0 +1,223 @@
+/*
+ * Portal Kelas Digital - Stylesheet
+ * Incorporating replica design tokens (WCAG 2.2 AA compliant)
+ * Full Light Mode & Dark Mode Support
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* DARK THEME (Default) */
+  --color-bg: #0a1124;
+  --color-surface: #111d38;
+  --color-surface-subtle: #162548;
+  --color-border: #20335e;
+  --color-border-input: #627d9e;
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-accent: #2563eb;
+  --color-on-accent: #ffffff;
+  --color-accent-gold: #f59e0b;
+  --color-on-accent-gold: #0a1124;
+  --color-danger: #f87171;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* LIGHT THEME VARIABLES */
+html:not(.dark) {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-input: #cbd5e1;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-on-accent: #ffffff;
+  --color-accent-gold: #f59e0b;
+  --color-on-accent-gold: #0a1124;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-subtle);
+  border-radius: 9999px;
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-input);
+}
+
+/* Active Sidebar Item */
+.sidebar-link.active {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.22) 0%, rgba(37, 99, 235, 0.05) 100%);
+  color: #60a5fa;
+  border-left: 3px solid #3b82f6;
+  font-weight: 600;
+}
+
+/* Card Hover Elevation */
+.hover-card {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Gold Button Glow */
+.btn-gold-glow {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.25) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #fef3c7;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.2);
+  transition: all 0.2s ease;
+}
+.btn-gold-glow:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.35) 100%);
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   LIGHT MODE OVERRIDES (Matches Original Portal in Light Theme)
+   ========================================================================== */
+
+html:not(.dark) body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Main Viewport Container & Header */
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+html:not(.dark) header #page-title {
+  color: #0f172a !important;
+}
+html:not(.dark) footer {
+  border-top-color: #e2e8f0 !important;
+  background-color: #ffffff !important;
+  color: #64748b !important;
+}
+
+/* Card Surfaces in Light Mode */
+html:not(.dark) .bg-\[\#111d38\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05) !important;
+}
+html:not(.dark) .bg-\[\#0a1124\] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) .bg-\[\#162548\] {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) .border-\[\#20335e\] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Typography in Light Mode */
+html:not(.dark) .text-\[\#f8fafc\] {
+  color: #0f172a !important;
+}
+html:not(.dark) .text-\[\#94a3b8\] {
+  color: #64748b !important;
+}
+html:not(.dark) .text-\[\#627d9e\] {
+  color: #94a3b8 !important;
+}
+
+/* Buttons in Light Mode */
+html:not(.dark) .btn-filter.bg-\[\#111d38\] {
+  background-color: #ffffff !important;
+  color: #64748b !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) .btn-filter.bg-\[\#111d38\]:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+html:not(.dark) .btn-gold-glow {
+  background: #fffbeb !important;
+  color: #b45309 !important;
+  border-color: #fcd34d !important;
+  box-shadow: 0 1px 3px rgba(245, 158, 11, 0.15) !important;
+}
+html:not(.dark) .btn-gold-glow i {
+  color: #d97706 !important;
+}
+
+/* Hero Welcome Card in Light Mode */
+html:not(.dark) .bg-gradient-to-br.from-\[\#111d38\] {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Announcement Banner in Light Mode */
+html:not(.dark) .bg-gradient-to-r.from-blue-950\/60 {
+  background: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1e40af !important;
+}
+html:not(.dark) .bg-gradient-to-r.from-blue-950\/60 span {
+  color: #1e40af !important;
+}
+
+/* Modals in Light Mode */
+html:not(.dark) #modal-redeem .bg-\[\#111d38\],
+html:not(.dark) #modal-api-config .bg-\[\#111d38\],
+html:not(.dark) #modal-testimonial .bg-\[\#111d38\] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+html:not(.dark) input {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Sidebar retains its sleek dark navy identity as in the original */
+#main-sidebar {
+  background-color: #0d162d !important;
+  border-right-color: #1e293b !important;
+}
+#main-sidebar .text-\[\#f8fafc\] {
+  color: #f8fafc !important;
+}
+#main-sidebar .text-\[\#94a3b8\] {
+  color: #94a3b8 !important;
+}

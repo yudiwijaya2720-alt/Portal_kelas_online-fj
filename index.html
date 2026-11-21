@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produk Digital - Portal Kelas</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a1124',
+            surface: '#111d38',
+            'surface-subtle': '#162548',
+            border: '#20335e',
+            'border-input': '#627d9e',
+            text: '#f8fafc',
+            'text-muted': '#94a3b8',
+            accent: '#2563eb',
+            'accent-gold': '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet with Tokens -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0a1124] text-[#f8fafc] font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Sidebar Mount Point -->
+  <div id="sidebar-container"></div>
+
+  <!-- Main Viewport Area -->
+  <div class="md:pl-64 flex flex-col min-h-screen">
+    <!-- Navbar Mount Point -->
+    <div id="navbar-container"></div>
+
+    <!-- Active Screen View Mount Point -->
+    <main id="main-content" class="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full"></main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#20335e] py-6 px-4 md:px-8 text-center text-xs text-[#94a3b8]">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div>&copy; 2026 Portal Kelas Produk Digital. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="#/guides" class="hover:text-[#f8fafc] transition-colors">Panduan</a>
+          <a href="#/security" class="hover:text-[#f8fafc] transition-colors">Keamanan</a>
+          <a href="https://github.com" target="_blank" class="hover:text-[#f8fafc] transition-colors">Open Source</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modals Mount Point -->
+  <div id="modals-container"></div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/seed.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
